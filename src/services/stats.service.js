@@ -4,6 +4,8 @@ const Record = require('../models/record.model');
 
 
 const getAllRecords = async () => {
+
+  try{
   const com = await Record
     .find({})
     .sort({ _id: -1 })
@@ -37,6 +39,9 @@ const getAllRecords = async () => {
   const slicedArray = modif.slice(0, 50);
 
   return slicedArray;
+}catch(err){
+  console.log(err);
+}
 };
 
 
