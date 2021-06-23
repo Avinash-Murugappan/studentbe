@@ -4,6 +4,8 @@ const port = process.env.PORT || 4001
 var cors = require('cors')
 var path = require('path');
 var bodyParser = require('body-parser')
+
+
 app.use(bodyParser.json())
 require('dotenv').config()
 const routes = require('./routes/v1');
@@ -24,7 +26,7 @@ app.use('/v1', routes);
 
 app.listen(port, () => {
   console.log(`Jupiter listening at http://localhost:${port}`)
-  
+
 
 })
 

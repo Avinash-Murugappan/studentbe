@@ -31,7 +31,7 @@ const searchRecords = async (searchText) => {
 
 
    return rec;
-  
+
 };
 
 
@@ -40,7 +40,7 @@ const getAllRecords = async () => {
   .find({})
   .sort({_id:-1})
   .populate('company',['companyName','careerUrl'])
-  
+
   return com;
 };
 
@@ -48,7 +48,7 @@ const getRecordById = async (Id) => {
   const com = await Record
   .find({_id:Id})
   .populate('company',['companyName','careerUrl'])
-  
+
   return com;
 };
 
@@ -59,7 +59,7 @@ if(next_cursor === 'null') {
   .find({})
   .populate('company',['companyName','careerUrl'])
   .limit(limit)
-  return com 
+  return com
 }
 
 else {
@@ -69,7 +69,7 @@ else {
   .limit(limit)
 
 }
-  
+
   // console.log(com,'record service getpaginatedrecrds');
   return com
 };
@@ -110,6 +110,5 @@ module.exports = {
     getRecordsByCompanyId,
     getRecordById,
 
-   
+
   };
-  
